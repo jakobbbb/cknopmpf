@@ -1,0 +1,86 @@
+\documentclass[notheorems]{beamer}
+
+\usepackage{lipsum}
+
+\usepackage[
+  %german,
+  %light
+]{cknopmpf}
+
+
+\title{Hello, World!}
+\subtitle{A Presentation about Things}
+\author{Alice Lastname\inst{1} \and Bob Nachname\inst{2}}
+\shortauthor{Lastname, Nachname}
+\email[1]{alice@example.org}
+\email[2]{bob@example.org}
+
+
+%-----------------------------------------------------------------------
+
+
+\begin{document}
+\maketitle
+
+\section{Lorem Ipsum}
+
+\begin{frame}{A Paragraph of Lipsum}
+  \lipsum[1]
+\end{frame}
+
+\begin{frame}{Dolor Sit}
+\textbf{Consectetur adipiscing}:
+  \begin{itemize}
+    \item eiusmod
+    \item tempor
+    \item incididunt
+  \end{itemize}
+
+\textbf{Adipiscing pariatur}:
+  \begin{enumerate}
+    \item eiusmod
+    \item tempor
+    \item incididunt
+  \end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{A Proof}
+  \framesubtitle{Oh yeah}
+  \begin{thm}
+    \begin{equation*}
+      \sum_{i=1}^n i = \frac{n(n+1)}{2},%
+      \quad\forall n\in\mathbb{N}.
+    \end{equation*}
+  \end{thm}
+  \begin{proof}\noqed
+    Basis:
+    \begin{equation*}
+      \sum_{i=1}^1 i = 1 = \frac{1(1+1)}{2}.
+    \end{equation*}
+  \end{proof}
+\end{frame}
+\begin{frame}
+  \begin{proof}
+    Suppose the statement holds for an
+    $n\in\mathbb{N}$.
+
+    Induction:
+    We'll show that, as $n\longrightarrow n+1$:
+    \begin{equation*}
+      \sum_{i=1}^{n+1} i = \frac{(n+1)(n+2)}{2}
+      = \frac{n^2 + 3n + 2}{2}.
+    \end{equation*}
+    Per the induction hypothesis, $(1)$ holds, and thus:
+    \begin{align*}
+      \sum_{i=1}^{n+1} i
+      &= \sum_{i=1}^{n} i + (n+1)
+      \overset{(1)}{=} \frac{n(n+1)}{2} + (n+1) \\
+      &= \frac{n(n+1)}{2} + \frac{2(n+1)}{2}
+      = \frac{n^2 + 3n + 2}{2}.
+    \end{align*}
+  \end{proof}
+\end{frame}
+
+\end{document}

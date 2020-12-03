@@ -1,0 +1,136 @@
+% Copyright (C) 2020 Jakob Ruckel
+%
+% This program is free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+%
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License
+% along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+\ProvidesPackage{cknopmpf}[cknopmpf]
+
+\DeclareOption{german}{
+  \def\ckgerman{1}
+}
+\DeclareOption{light}{
+  \def\cklighttheme{1}
+}
+\ProcessOptions\relax
+
+\ifdefined\ckgerman
+  \usepackage[ngerman]{babel}
+  \selectlanguage{ngerman}
+\else
+  \usepackage[english]{babel}
+  \selectlanguage{english}
+\fi
+
+\newcommand*\ckinst{}
+\newcommand{\email}[2][]{
+  \def\instno{#1}
+
+  \ifdefined\ckinst
+    \g@addto@macro\ckinst{
+      \and
+      \ifx\temp\empty
+      \else
+        \inst{#1}%
+      \fi
+      \href{mailto:#2}%
+      {\nolinkurl{#2}}%
+    }
+  \else
+    \def\ckinst{
+      \ifx\temp\empty
+      \else
+        \inst{#1}%
+      \fi
+      \href{mailto:#2}%
+      {\nolinkurl{#2}}%
+    }
+  \fi
+}
+\institute{\ckinst}
+
+\usetheme{Malmoe}
+
+% Colors
+\ifdefined\cklighttheme
+  \usecolortheme{default}
+  \colorlet{item}{red!20!-blue}
+\else
+  \usecolortheme{magpie}
+  \definecolor{bleu}{HTML}{000050}
+  \colorlet{noir}{black!93!white}
+  \colorlet{item}{rouge!20!-bleu}
+\fi
+
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{page number in head/foot}[appendixframenumber]
+\setbeamertemplate{headline}{}
+
+\newcommand*\oldmacro{}%
+\let\oldmacro\insertshorttitle%
+
+\renewcommand*\insertshorttitle{%
+  \hyperlinksectionstart{\secname}}
+
+\newcommand{\shortauthor}[1]{
+  \renewcommand*\insertshortauthor{#1}
+}
+
+\setbeamertemplate{headline}{}
+
+%--- PACKAGES ----------------------------------------------------------
+
+\usepackage{textcomp}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{xspace}
+
+\usepackage{array} % allows for things like `>{\bf}c` in tables
+
+%-----------------------------------------------------------------------
+% Theorems
+%-----------------------------------------------------------------------
+
+\ifdefined\ckgerman
+  \def\ckthmname{Satz.}
+  \def\ckexamplename{Beispiel.}
+\else
+  \def\ckthmname{Theorem.}
+  \def\ckexamplename{Example.}
+\fi
+
+\newtheorem{thm}{\ckthmname}[section]
+\newtheorem{cor}[thm]{Corollary.}
+\newtheorem{lem}[thm]{Lemma.}
+\newtheorem{prop}[thm]{Proposition.}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition.}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark.}
+\newtheorem{example}[thm]{\ckexamplename}
+
+\newcommand{\noqed}{
+  \renewcommand{\qed}{\hfill\dots}
+}
+
+%-----------------------------------------------------------------------
+% Macros
+%-----------------------------------------------------------------------
+
+\newcommand{\pmat}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+
+%-----------------------------------------------------------------------
+
+\endinput
