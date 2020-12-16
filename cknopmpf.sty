@@ -122,9 +122,20 @@
 \theoremstyle{remark}
 \newtheorem{rem}[thm]{Remark.}
 \newtheorem{example}[thm]{\ckexamplename}
+\newtheorem{task}[thm]{\cktaskname}
 
 \newcommand{\noqed}{
   \renewcommand{\qed}{\hfill\dots}
+}
+
+\newcommand{\enableblackboardframes}{\def\ckbbenabled{1}}
+
+\newcommand{\blackboardframe}[1]{
+\ifdefined\ckbbenabled
+\begin{frame}{#1}%
+
+\end{frame}
+\fi
 }
 
 %-----------------------------------------------------------------------
