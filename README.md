@@ -4,7 +4,8 @@
 
 ## install
 
-Symlink the `.sty` to `~/texmf/tex/latex/cknopmpf/cknopmpf.sty`.
+Symlink the `.sty` to `~/texmf/tex/latex/cknopmpf/cknopmpf.sty`, or
+simply run `make install`.
 
 ## options
 
