@@ -23,9 +23,11 @@ is blank.  They are indented to be drawn on during a lecture.
 Create blackboard slides with the `\blackboardframe{Example Title}`
 command.
 
-You might wish to share a version of your slides without these
-blackboard slides, so they must explicitly be enabled with the
-`\enableblackboardframes` command.
+If beamer is used with the handout option:
+```tex
+\documentclass[handout]{beamer}
+```
+Blackboard slides will not be shown.
 
 
 ## example

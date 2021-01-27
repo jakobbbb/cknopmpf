@@ -130,7 +130,11 @@
   \renewcommand{\qed}{\hfill\dots}
 }
 
-\newcommand{\enableblackboardframes}{\def\ckbbenabled{1}}
+
+\@ifclasswith{beamer}{handout}{%
+}{%
+  \def\ckbbenabled{1}
+}
 
 \newcommand{\blackboardframe}[1]{
 \ifdefined\ckbbenabled
