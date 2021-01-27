@@ -107,14 +107,16 @@
   \def\ckthmname{Satz.}
   \def\ckexamplename{Beispiel.}
   \def\cktaskname{Aufgabe.}
+  \def\ckcorname{Folgerung.}
 \else
   \def\ckthmname{Theorem.}
   \def\ckexamplename{Example.}
   \def\cktaskname{Task.}
+  \def\ckcorname{Corollary.}
 \fi
 
 \newtheorem{thm}{\ckthmname}[section]
-\newtheorem{cor}[thm]{Corollary.}
+\newtheorem{cor}[thm]{\ckcorname}
 \newtheorem{lem}[thm]{Lemma.}
 \newtheorem{prop}[thm]{Proposition.}
 \theoremstyle{definition}
