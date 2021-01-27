@@ -21,7 +21,8 @@ printer-friendly but ugly.
 *Blackboard Slides* are slides that only have a title but their content
 is blank.  They are indented to be drawn on during a lecture.
 Create blackboard slides with the `\blackboardframe{Example Title}`
-command.
+command.  You can also add the same blackboard frame mutliple times:
+`\blackboardframe[42]{Example Title}`.
 
 If beamer is used with the handout option:
 ```tex

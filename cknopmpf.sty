@@ -96,6 +96,7 @@
 \usepackage{amssymb}
 \usepackage{booktabs}
 \usepackage{xspace}
+\usepackage{pgffor}
 
 \usepackage{array} % allows for things like `>{\bf}c` in tables
 
@@ -136,11 +137,13 @@
   \def\ckbbenabled{1}
 }
 
-\newcommand{\blackboardframe}[1]{
+\newcommand{\blackboardframe}[2][1]{
 \ifdefined\ckbbenabled
-\begin{frame}{#1}%
+\foreach \n in {1,...,#1}{%
+  \begin{frame}{#2}%
 
-\end{frame}
+  \end{frame}
+}
 \fi
 }
 
