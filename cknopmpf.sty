@@ -31,6 +31,35 @@
   \selectlanguage{english}
 \fi
 
+\newcommand*\ckauthorlist{}
+\newlength{\authorwidth}
+\setlength{\authorwidth}{0.45\linewidth}
+\newcommand{\addauthor}[2]{
+  \g@addto@macro\ckauthorlist{
+    \texorpdfstring{%
+      \parbox{\authorwidth}{\centering
+        #1\\%
+        {%
+          \usebeamerfont{institute}%
+          \href{mailto:#2}%
+          {\nolinkurl{#2}}
+        }%
+      }
+    }{%
+      #2
+    }
+  }
+}
+\newcommand{\authorlinebreak}{
+  \g@addto@macro\ckauthorlist{
+    \vspace{1em}
+    \linebreak
+  }
+}
+
+
+\author{\ckauthorlist}
+
 \newcommand*\ckinst{}
 \newcommand{\email}[2][]{
   \def\instno{#1}
