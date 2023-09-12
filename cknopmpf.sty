@@ -183,6 +183,12 @@
 %-----------------------------------------------------------------------
 
 \newcommand{\pmat}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\newcommand{\hnameref}[1]{%
+  \hyperref[#1]{\color{item}\nameref{#1}}%
+}
+\newcommand{\hanameref}[1]{%
+  \hyperref[#1]{\color{item}\textrightarrow\xspace\nameref{#1}}%
+}
 
 %-----------------------------------------------------------------------
 
