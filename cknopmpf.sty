@@ -21,6 +21,9 @@
 \DeclareOption{light}{
   \def\cklighttheme{1}
 }
+\DeclareOption{shorttitle}{
+  \def\ckshorttitle{1}
+}
 \ProcessOptions\relax
 
 \ifdefined\ckgerman
@@ -105,11 +108,14 @@
 \setbeamertemplate{page number in head/foot}[appendixframenumber]
 \setbeamertemplate{headline}{}
 
-\newcommand*\oldmacro{}%
-\let\oldmacro\insertshorttitle%
+\ifdefined\ckshorttitle
+\else
+  \newcommand*\oldinsertshorttitle{}%
+  \let\oldinsertshorttitle\insertshorttitle%
 
-\renewcommand*\insertshorttitle{%
-  \hyperlinksectionstart{\secname}}
+  \renewcommand*\insertshorttitle{%
+    \hyperlinksectionstart{\secname}}
+\fi
 
 \newcommand{\shortauthor}[1]{
   \renewcommand*\insertshortauthor{#1}
