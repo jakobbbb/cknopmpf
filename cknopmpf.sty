@@ -24,6 +24,9 @@
 \DeclareOption{shorttitle}{
   \def\ckshorttitle{1}
 }
+\DeclareOption{fancytitles}{
+  \def\ckfancytitles{1}
+}
 \ProcessOptions\relax
 
 \ifdefined\ckgerman
@@ -33,6 +36,12 @@
   \usepackage[english]{babel}
   \selectlanguage{english}
 \fi
+
+\ifdefined\ckfancytitles
+  \usepackage{pagella-otf}
+  \setbeamerfont{structure}{family=\rmfamily, shape=\itshape}
+\fi
+
 
 \newcommand*\ckauthorlist{}
 \newlength{\authorwidth}

@@ -14,6 +14,8 @@ babel and uses German labels for custom environments.
 
 `light`:  Switches the theme from dark to light.
 
+`fancytitles `:  Uses fancy italics titles.
+
 ## features
 
 *Blackboard Slides* are slides that only have a title but their content
@@ -35,5 +37,7 @@ Blackboard slides will not be shown.
 ![example-1](example-imgs/example-1.png)
 ![example-2](example-imgs/example-2.png)
 ![example-3](example-imgs/example-3.png)
-![example-4](example-imgs/example-4.png)
-![example-5](example-imgs/example-5.png)
+
+Light theme with fancy titles:
+
+![example-4](example-imgs/example-4-light.png)
