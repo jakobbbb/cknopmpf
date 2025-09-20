@@ -12,9 +12,7 @@ simply run `make install`.
 `german`:  Use German language instead of English.  Loads `ngerman`
 babel and uses German labels for custom environments.
 
-`light`:  Switches the theme from dark to light.  Note that cknopmpf is
-is primariliy a dark theme, so this option makes your slides
-printer-friendly but ugly.
+`light`:  Switches the theme from dark to light.
 
 ## features
 

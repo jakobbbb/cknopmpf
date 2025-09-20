@@ -94,9 +94,12 @@
 
 % Colors
 \ifdefined\cklighttheme
-  \usecolortheme{seagull}
+  \usecolortheme{seahorse}
+  \usecolortheme{rose}
+  \definecolor{bleu}{HTML}{1155ee}
+  \setbeamercolor{structure}{fg=bleu}
   \colorlet{item}{red!20!-blue}
-  \setbeamercolor{frametitle}{bg=lightgray, fg=black}
+  %\setbeamercolor{frametitle}{bg=lightgray, fg=black}
 \else
   \usecolortheme{magpie}
   \definecolor{bleu}{HTML}{002565}
